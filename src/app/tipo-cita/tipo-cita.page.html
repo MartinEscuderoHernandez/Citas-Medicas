@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title>TIPO DE CITA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedCita">
+      <ion-list-header>
+        <ion-label>Seleccione el tipo de cita</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Medicina General</ion-label>
+        <ion-radio slot="end" value="Medicina General"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Odontología</ion-label>
+        <ion-radio slot="end" value="Odontología"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Psicología</ion-label>
+        <ion-radio slot="end" value="Psicología"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Nutricionista</ion-label>
+        <ion-radio slot="end" value="Nutricionista"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Otro</ion-label>
+        <ion-radio slot="end" value="Otro"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button expand="block" color="success" (click)="goToNextPage()" [disabled]="!selectedCita">Siguiente</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
