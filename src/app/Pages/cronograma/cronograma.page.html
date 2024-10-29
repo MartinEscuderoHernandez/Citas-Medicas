@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>CRONOGRAMA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Doctor(a)</ion-label>
+      <ion-select placeholder="Seleccionar Doctor" [(ngModel)]="selectedDoctor" (ionChange)="cargarFechasDisponibles()">
+        <ion-select-option *ngFor="let doctor of doctores" [value]="doctor">
+          {{ doctor.nombre }} {{ doctor.apellidos }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-select placeholder="Seleccionar Fecha" [(ngModel)]="selectedFecha" (ionChange)="cargarHorasDisponibles()">
+        <ion-select-option *ngFor="let fecha of fechas" [value]="fecha">
+          {{ fecha }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hora</ion-label>
+      <ion-select placeholder="Seleccionar Hora" [(ngModel)]="selectedHora">
+        <ion-select-option *ngFor="let hora of horas" [value]="hora">
+          {{ hora.hora_inicio }} - {{ hora.hora_fin }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-button expand="full" color="success" (click)="guardarSeleccion()">Confirmar Cita</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

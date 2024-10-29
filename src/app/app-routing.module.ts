@@ -5,7 +5,7 @@ const routes: Routes = [
   
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: '',
@@ -14,16 +14,21 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./Pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'tipo-cita',
-    loadChildren: () => import('./tipo-cita/tipo-cita.module').then( m => m.TipoCitaPageModule)
+    loadChildren: () => import('./Pages/tipo-cita/tipo-cita.module').then( m => m.TipoCitaPageModule)
   },
   {
     path: 'cronograma',
-    loadChildren: () => import('./cronograma/cronograma.module').then( m => m.CronogramaPageModule)
+    loadChildren: () => import('./Pages/cronograma/cronograma.module').then( m => m.CronogramaPageModule)
   },
+  {
+    path: 'confirmacion',
+    loadChildren: () => import('./Pages/confirmacion/confirmacion.module').then( m => m.ConfirmacionPageModule)
+  },
+
 ];
 
 @NgModule({

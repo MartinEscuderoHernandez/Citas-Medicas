@@ -1,0 +1,24 @@
+<div style="height: 30%; background-color: #83AAE5;">
+<h1 style="color: black; text-align: center; font-weight: bold; padding: 20%;">AGENDY PLUS</h1>
+</div>
+<div style="height: 100%; background-color: #EDEDED; text-align: center;">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Cedula / Codigo</ion-label>
+          <ion-input type="number" formControlName="cedula" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="contrasena" required></ion-input>
+        </ion-item>
+        <ion-button expand="block" color="success" type="submit" [disabled]="loginForm.invalid">Ingresar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ion-button routerLink="/register" >Registrarse</ion-button>
+</div>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="background-color: #EDEDED;">
+    <ion-card-header>
+      <ion-card-title>Formulario</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" formControlName="nombre" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" formControlName="apellidos" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Número de Cedula</ion-label>
+          <ion-input type="number" formControlName="cedula" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Teléfono</ion-label>
+          <ion-input type="number" formControlName="telefono" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input type="email" formControlName="correo" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="contrasena" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Confirmar Contraseña</ion-label>
+          <ion-input type="password" formControlName="confirmarContrasena" required></ion-input>
+        </ion-item>
+
+        <!-- Mostrar errores si las contraseñas no coinciden -->
+    <div *ngIf="registerForm.errors?.['notSame'] && registerForm.touched">
+      <ion-text color="danger">
+        <p>Las contraseñas no coinciden</p>
+      </ion-text>
+    </div>
+
+        <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">Confirmar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

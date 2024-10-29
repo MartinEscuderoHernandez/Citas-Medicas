@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Confirmación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+  <div class="confirmacion-container">
+    <h1>Su cita se ha agendado con éxito</h1>
+    <ion-icon name="bandage-outline" class="confirmacion-icon"></ion-icon>
+    <a routerLink="/tipo-cita" class="agendar-link">Ir a Home</a>
+  </div>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Detalles de la Cita</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Doctor:</strong> {{ doctorNombre }} {{doctorApellidos}} </p>
+        <p><strong>Fecha:</strong> {{ fecha }}</p>
+        <p><strong>Hora:</strong> {{ hora }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
